@@ -21,16 +21,39 @@ class UserInputToCompileForTest
     public static int[] SumRows(int[,] array)
     {
       //Напишите свое решение здесь
+      int[] SumRowArr = new int[array.GetLength(0)];
+      for(int i = 0; i < array.GetLength(0); i++)
+      { 
+        int sumOfElements = 0;
+        for(int j = 0; j < array.GetLength(1); j++)
+        { 
+            sumOfElements += array[i, j];
+        }
+        SumRowArr[i] = sumOfElements;
+      }
+      return SumRowArr;
     }
     
     // Получение индекса минимального элемента в одномерном массиве
     public static int MinIndex(int[] array)
     {
        //Напишите свое решение здесь
+       int minIndex = 0;
+       int minValue = array[0]; 
+       for(int i = 0; i < array.Length; i++)
+       {
+        if (array[i] < minValue)
+        {
+            minValue = array[i];;
+            minIndex = i;
+        }
+       } 
+       return minIndex;
     }
     public static void PrintResult(int[,] numbers)
     {   
        //Напишите свое решение здесь
+        Console.WriteLine(MinIndex(SumRows(numbers)));
     }
 }
 
@@ -74,9 +97,9 @@ class Answer
             // Если аргументов на входе нет, используем примерный массив
             
             numbers = new int[,] {
-                {1, 2, 3},
-                {1, 1, 0},
-                {7, 8, 2},
+                {1, 2, 33},
+                {111, 9, 10},
+                {7, 85, 2},
                 {9, 10, 11}
     };      
         }

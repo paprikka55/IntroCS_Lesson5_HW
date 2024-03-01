@@ -111,4 +111,4 @@ PrintArray(array);
 int[,] cut_arr = CutArrayByMinElement(array);
 Console.WriteLine("Измененный массив: ");
 PrintArray(cut_arr);
-
+Console.ReadKey();
